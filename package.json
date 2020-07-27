@@ -1,11 +1,13 @@
 {
   "name": "gallery",
   "version": "0.1.0",
+  "homepage": "http://kaigor619.github.io/react-gallery",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "gh-pages": "^3.1.0",
     "next": "^9.4.4",
     "postcss-flexbugs-fixes": "^4.2.1",
     "react": "^16.13.1",
@@ -18,7 +20,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build:css": "postcss src/assets/tailwind.css -o src/assets/main.css",
-    "watch:css": "postcss src/assets/tailwind.css -o src/assets/main.css"
+    "watch:css": "postcss src/assets/tailwind.css -o src/assets/main.css",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
