@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import * as Action from '../redux/actions';
 
-const ImageSearch = ({ searchText }) => {
-  let text = '';
+const ImageSearch = ({ changeTerm, term }) => {
+  let [text, setText] = useState(term);
 
   const onSubmit = (e) => {
     e.preventDefault();
-    searchText(text);
+    changeTerm(text);
   };
+
+  useEffect(() => {
+    setText(term);
+  }, [term]);
 
   return (
     <div className="flex justify-center py-6 mb-6">
@@ -16,8 +22,9 @@ const ImageSearch = ({ searchText }) => {
           type="text"
           id="search"
           name="search"
-          onInput={(e) => {
-            text = e.target.value;
+          value={text}
+          onChange={(e) => {
+            setText(e.target.value);
           }}
         />
         <button
@@ -31,4 +38,16 @@ const ImageSearch = ({ searchText }) => {
   );
 };
 
-export default ImageSearch;
+const mapStateToProps = ({ term }) => ({
+  term,
+});
+const mapDispatchToProps = (dispatch) => {
+  return {
+    changeTerm: (term) => {
+      dispatch(Action.changeTerm(term));
+      dispatch(Action.fetchImages());
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ImageSearch);

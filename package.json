@@ -1,18 +1,25 @@
 {
   "name": "gallery",
   "version": "0.1.0",
-  "homepage": "http://kaigor619.github.io/react-gallery",
+  "homepage": "https://kaigor619.github.io/react-gallery/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "gh-pages": "^3.1.0",
-    "next": "^9.4.4",
-    "postcss-flexbugs-fixes": "^4.2.1",
+    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-image-lightbox": "^5.1.1",
+    "react-lazy-load": "^3.1.13",
+    "react-redux": "^7.2.1",
+    "react-scripts": "3.4.1",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-saga": "^1.1.3",
+    "redux-thunk": "^2.3.0",
+    "sass": "^1.26.10"
   },
   "scripts": {
     "start": "npm run watch:css && react-scripts start",
